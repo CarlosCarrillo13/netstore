@@ -1,0 +1,126 @@
+entity BussinessUnit {
+	name String
+    nit String
+    brand String
+    active Boolean
+    
+}
+
+entity Category {
+	name String
+    uuid String
+    
+}
+
+entity Invoice {
+	totalPrize String
+    totalTax String
+    totalDiscount String
+    date String
+    recall Boolean
+}
+
+entity Shipment {
+	shipDate String
+    estimatedArrivalDate String
+    deliveryStatus DeliveryStatus
+    trackingNumber String
+    shippingCompany String    
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String
+}
+
+entity PointOfSale {
+	name String
+    subscribed Boolean
+    status Status
+}
+
+entity Subscription {
+	subscriptionType SubType
+    startDate String
+    endDate String
+    amount String
+    numberOfPos Integer
+}
+
+entity Item {
+	name String
+    sku String
+    endDate String
+    amount String
+}
+
+entity Prize {
+	symbol String
+    country String
+    amount String
+}
+
+entity Tax {
+	percentage Integer
+    concept String
+}
+
+entity Discount {
+	percentage Integer
+    concept String
+    startDate String
+    endDate String
+    active Boolean
+}
+
+enum SubType {
+	MONTHLY, YEARLY, TRIAL
+}
+
+enum Status {
+    ACTIVE, ON_HOLD, INACTIVE 
+}
+
+enum DeliveryStatus {
+	ISSUED, DELIVERED, CANCELLED, RETURNED, IN_PERSON
+}
+
+entity Employee {
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	salary Long,
+	commissionPct Long
+}
+
+relationship OneToOne {
+  BussinessUnit{bussiness} to Subscription{subscription}
+  PointOfSale{address} to Location
+  Invoice{invoiceVendor} to Employee
+  Invoice{invoiceShipment} to Shipment
+  Shipment{shipmentAddress} to Location
+  
+}
+relationship OneToMany {
+  BussinessUnit{bussinessCategories} to Category{bussiness}
+  Category{item} to Item{itemCategory}
+  BussinessUnit{bussinessPOS} to PointOfSale{bussiness}
+  Item{itemPrize} to Prize
+  PointOfSale{pointOfSalePrize} to Prize
+  Item{itemDiscount} to Discount
+  Item{itemTax} to Tax
+  PointOfSale{pointOfSaleEmployee} to Employee
+  Invoice{invoiceItems} to Item
+  Employee{employeeManager} to Employee
+}
+
+// defining multiple oneToOne relationships
+
+
+
