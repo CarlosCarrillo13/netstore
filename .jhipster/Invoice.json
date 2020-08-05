@@ -1,0 +1,60 @@
+{
+  "name": "Invoice",
+  "fields": [
+    {
+      "fieldName": "totalPrize",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalTax",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalDiscount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "recall",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "invoiceVendor",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "shipment",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "invoiceShipment",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "item",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "invoiceItems"
+    }
+  ],
+  "changelogDate": "20200730012100",
+  "entityTableName": "invoice",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

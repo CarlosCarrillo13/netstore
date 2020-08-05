@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tax">
+            <h2><span jhiTranslate="netstoreApp.tax.detail.title">Tax</span> {{ tax.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="netstoreApp.tax.percentage">Percentage</span></dt>
+                <dd>
+                    <span>{{ tax.percentage }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.tax.concept">Concept</span></dt>
+                <dd>
+                    <span>{{ tax.concept }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.tax.item">Item</span></dt>
+                <dd>
+                    <div *ngIf="tax.item">
+                        <a [routerLink]="['/item', tax.item?.id, 'view']">{{ tax.item?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tax', tax.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+{
+  "netstoreApp": {
+    "employee": {
+      "home": {
+        "title": "Employees",
+        "createLabel": "Criar novo(a) Employee",
+        "createOrEditLabel": "Criar ou editar Employee",
+        "search": "Procurar por Employee",
+        "notFound": "Nenhum Employees encontrado"
+      },
+      "created": "Um novo Employee foi criado com o identificador {{ param }}",
+      "updated": "Employee com identificador {{ param }} foi actualizado",
+      "deleted": "Employee com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Employee {{ id }}?"
+      },
+      "detail": {
+        "title": "Employee"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "hireDate": "Hire Date",
+      "salary": "Salary",
+      "commissionPct": "Commission Pct",
+      "employeeManager": "Employee Manager",
+      "pointOfSale": "Point Of Sale",
+      "employee": "Employee"
+    }
+  }
+}

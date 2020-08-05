@@ -1,0 +1,28 @@
+{
+  "netstoreApp": {
+    "shipment": {
+      "home": {
+        "title": "Shipments",
+        "createLabel": "Create a new Shipment",
+        "createOrEditLabel": "Create or edit a Shipment",
+        "search": "Search for Shipment",
+        "notFound": "No Shipments found"
+      },
+      "created": "A new Shipment is created with identifier {{ param }}",
+      "updated": "A Shipment is updated with identifier {{ param }}",
+      "deleted": "A Shipment is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Shipment {{ id }}?"
+      },
+      "detail": {
+        "title": "Shipment"
+      },
+      "shipDate": "Ship Date",
+      "estimatedArrivalDate": "Estimated Arrival Date",
+      "deliveryStatus": "Delivery Status",
+      "trackingNumber": "Tracking Number",
+      "shippingCompany": "Shipping Company",
+      "shipmentAddress": "Shipment Address"
+    }
+  }
+}

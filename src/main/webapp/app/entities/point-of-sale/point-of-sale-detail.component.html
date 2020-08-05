@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pointOfSale">
+            <h2><span jhiTranslate="netstoreApp.pointOfSale.detail.title">Point Of Sale</span> {{ pointOfSale.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="netstoreApp.pointOfSale.name">Name</span></dt>
+                <dd>
+                    <span>{{ pointOfSale.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.pointOfSale.subscribed">Subscribed</span></dt>
+                <dd>
+                    <span>{{ pointOfSale.subscribed }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.pointOfSale.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'netstoreApp.Status.' + pointOfSale.status }}">{{ pointOfSale.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.pointOfSale.address">Address</span></dt>
+                <dd>
+                    <div *ngIf="pointOfSale.address">
+                        <a [routerLink]="['/location', pointOfSale.address?.id, 'view']">{{ pointOfSale.address?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.pointOfSale.bussiness">Bussiness</span></dt>
+                <dd>
+                    <div *ngIf="pointOfSale.bussiness">
+                        <a [routerLink]="['/bussiness-unit', pointOfSale.bussiness?.id, 'view']">{{ pointOfSale.bussiness?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/point-of-sale', pointOfSale.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

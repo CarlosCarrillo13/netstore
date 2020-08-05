@@ -12,7 +12,7 @@ describe('Component Tests', () => {
     let comp: UserManagementDetailComponent;
     let fixture: ComponentFixture<UserManagementDetailComponent>;
     const route: ActivatedRoute = ({
-      data: of({ user: new User(1, 'user', 'first', 'last', 'first@last.com', true, 'en', [Authority.USER], 'admin') }),
+      data: of({ user: new User(1, 'user', 'first', 'last', 'first@last.com', true, 'en', [Authority.SALES], 'admin') }),
     } as any) as ActivatedRoute;
 
     beforeEach(async(() => {
@@ -52,7 +52,7 @@ describe('Component Tests', () => {
             email: 'first@last.com',
             activated: true,
             langKey: 'en',
-            authorities: [Authority.USER],
+            authorities: [Authority.SALES],
             createdBy: 'admin',
           })
         );

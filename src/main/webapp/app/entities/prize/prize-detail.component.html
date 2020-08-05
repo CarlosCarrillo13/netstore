@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="prize">
+            <h2><span jhiTranslate="netstoreApp.prize.detail.title">Prize</span> {{ prize.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="netstoreApp.prize.symbol">Symbol</span></dt>
+                <dd>
+                    <span>{{ prize.symbol }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.prize.country">Country</span></dt>
+                <dd>
+                    <span>{{ prize.country }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.prize.amount">Amount</span></dt>
+                <dd>
+                    <span>{{ prize.amount }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.prize.item">Item</span></dt>
+                <dd>
+                    <div *ngIf="prize.item">
+                        <a [routerLink]="['/item', prize.item?.id, 'view']">{{ prize.item?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.prize.pointOfSale">Point Of Sale</span></dt>
+                <dd>
+                    <div *ngIf="prize.pointOfSale">
+                        <a [routerLink]="['/point-of-sale', prize.pointOfSale?.id, 'view']">{{ prize.pointOfSale?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/prize', prize.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

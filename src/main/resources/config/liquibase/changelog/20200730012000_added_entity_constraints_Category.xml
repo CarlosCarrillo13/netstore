@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Category.
+    -->
+    <changeSet id="20200730012000-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="bussiness_id"
+                                 baseTableName="category"
+                                 constraintName="fk_category_bussiness_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bussiness_unit"/>
+
+    </changeSet>
+</databaseChangeLog>

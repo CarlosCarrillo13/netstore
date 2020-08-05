@@ -1,0 +1,66 @@
+{
+  "name": "Item",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sku",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "prize",
+      "otherEntityRelationshipName": "item",
+      "relationshipName": "itemPrize"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "discount",
+      "otherEntityRelationshipName": "item",
+      "relationshipName": "itemDiscount"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tax",
+      "otherEntityRelationshipName": "item",
+      "relationshipName": "itemTax"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "category",
+      "otherEntityRelationshipName": "item",
+      "relationshipName": "itemCategory",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "invoiceItems",
+      "relationshipName": "invoice",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200730012600",
+  "entityTableName": "item",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

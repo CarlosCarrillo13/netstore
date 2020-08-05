@@ -1,0 +1,26 @@
+{
+  "netstoreApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "createLabel": "Criar novo(a) Category",
+        "createOrEditLabel": "Criar ou editar Category",
+        "search": "Procurar por Category",
+        "notFound": "Nenhum Categories encontrado"
+      },
+      "created": "Um novo Category foi criado com o identificador {{ param }}",
+      "updated": "Category com identificador {{ param }} foi actualizado",
+      "deleted": "Category com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "name": "Name",
+      "uuid": "Uuid",
+      "item": "Item",
+      "bussiness": "Bussiness"
+    }
+  }
+}

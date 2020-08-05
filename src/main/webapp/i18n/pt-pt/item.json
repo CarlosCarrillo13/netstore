@@ -1,0 +1,31 @@
+{
+  "netstoreApp": {
+    "item": {
+      "home": {
+        "title": "Items",
+        "createLabel": "Criar novo(a) Item",
+        "createOrEditLabel": "Criar ou editar Item",
+        "search": "Procurar por Item",
+        "notFound": "Nenhum Items encontrado"
+      },
+      "created": "Um novo Item foi criado com o identificador {{ param }}",
+      "updated": "Item com identificador {{ param }} foi actualizado",
+      "deleted": "Item com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Item"
+      },
+      "name": "Name",
+      "sku": "Sku",
+      "endDate": "End Date",
+      "amount": "Amount",
+      "itemPrize": "Item Prize",
+      "itemDiscount": "Item Discount",
+      "itemTax": "Item Tax",
+      "itemCategory": "Item Category",
+      "invoice": "Invoice"
+    }
+  }
+}

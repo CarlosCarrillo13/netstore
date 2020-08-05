@@ -1,0 +1,29 @@
+{
+  "netstoreApp": {
+    "bussinessUnit": {
+      "home": {
+        "title": "Bussiness Units",
+        "createLabel": "Criar novo(a) Bussiness Unit",
+        "createOrEditLabel": "Criar ou editar Bussiness Unit",
+        "search": "Procurar por Bussiness Unit",
+        "notFound": "Nenhum Bussiness Units encontrado"
+      },
+      "created": "Um novo Bussiness Unit foi criado com o identificador {{ param }}",
+      "updated": "Bussiness Unit com identificador {{ param }} foi actualizado",
+      "deleted": "Bussiness Unit com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Bussiness Unit {{ id }}?"
+      },
+      "detail": {
+        "title": "Bussiness Unit"
+      },
+      "name": "Name",
+      "nit": "Nit",
+      "brand": "Brand",
+      "active": "Active",
+      "bussiness": "Bussiness",
+      "bussinessCategories": "Bussiness Categories",
+      "bussinessPOS": "Bussiness POS"
+    }
+  }
+}

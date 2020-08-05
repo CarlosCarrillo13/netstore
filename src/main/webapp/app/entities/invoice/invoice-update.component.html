@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-invoice-heading" jhiTranslate="netstoreApp.invoice.home.createOrEditLabel">Create or edit a Invoice</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.invoice.totalPrize" for="field_totalPrize">Total Prize</label>
+                    <input type="text" class="form-control" name="totalPrize" id="field_totalPrize"
+                           formControlName="totalPrize"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.invoice.totalTax" for="field_totalTax">Total Tax</label>
+                    <input type="text" class="form-control" name="totalTax" id="field_totalTax"
+                           formControlName="totalTax"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.invoice.totalDiscount" for="field_totalDiscount">Total Discount</label>
+                    <input type="text" class="form-control" name="totalDiscount" id="field_totalDiscount"
+                           formControlName="totalDiscount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.invoice.date" for="field_date">Date</label>
+                    <input type="text" class="form-control" name="date" id="field_date"
+                           formControlName="date"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.invoice.recall" for="field_recall">Recall</label>
+                    <input type="checkbox" class="form-control" name="recall" id="field_recall"
+                           formControlName="recall"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.invoice.invoiceVendor" for="field_invoiceVendor">Invoice Vendor</label>
+                    <select class="form-control" id="field_invoiceVendor" name="invoiceVendor" formControlName="invoiceVendor">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="employeeOption.id === editForm.get('invoiceVendor')!.value?.id ? editForm.get('invoiceVendor')!.value : employeeOption" *ngFor="let employeeOption of invoicevendors; trackBy: trackById">{{ employeeOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.invoice.invoiceShipment" for="field_invoiceShipment">Invoice Shipment</label>
+                    <select class="form-control" id="field_invoiceShipment" name="invoiceShipment" formControlName="invoiceShipment">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="shipmentOption.id === editForm.get('invoiceShipment')!.value?.id ? editForm.get('invoiceShipment')!.value : shipmentOption" *ngFor="let shipmentOption of invoiceshipments; trackBy: trackById">{{ shipmentOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

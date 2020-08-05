@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invoice">
+            <h2><span jhiTranslate="netstoreApp.invoice.detail.title">Invoice</span> {{ invoice.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="netstoreApp.invoice.totalPrize">Total Prize</span></dt>
+                <dd>
+                    <span>{{ invoice.totalPrize }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.invoice.totalTax">Total Tax</span></dt>
+                <dd>
+                    <span>{{ invoice.totalTax }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.invoice.totalDiscount">Total Discount</span></dt>
+                <dd>
+                    <span>{{ invoice.totalDiscount }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.invoice.date">Date</span></dt>
+                <dd>
+                    <span>{{ invoice.date }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.invoice.recall">Recall</span></dt>
+                <dd>
+                    <span>{{ invoice.recall }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.invoice.invoiceVendor">Invoice Vendor</span></dt>
+                <dd>
+                    <div *ngIf="invoice.invoiceVendor">
+                        <a [routerLink]="['/employee', invoice.invoiceVendor?.id, 'view']">{{ invoice.invoiceVendor?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.invoice.invoiceShipment">Invoice Shipment</span></dt>
+                <dd>
+                    <div *ngIf="invoice.invoiceShipment">
+                        <a [routerLink]="['/shipment', invoice.invoiceShipment?.id, 'view']">{{ invoice.invoiceShipment?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invoice', invoice.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

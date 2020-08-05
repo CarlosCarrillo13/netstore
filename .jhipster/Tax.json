@@ -1,0 +1,33 @@
+{
+  "name": "Tax",
+  "fields": [
+    {
+      "fieldName": "percentage",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "concept",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "item",
+      "otherEntityRelationshipName": "itemTax",
+      "relationshipName": "item",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200730012800",
+  "entityTableName": "tax",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

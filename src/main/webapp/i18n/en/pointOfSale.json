@@ -1,0 +1,29 @@
+{
+  "netstoreApp": {
+    "pointOfSale": {
+      "home": {
+        "title": "Point Of Sales",
+        "createLabel": "Create a new Point Of Sale",
+        "createOrEditLabel": "Create or edit a Point Of Sale",
+        "search": "Search for Point Of Sale",
+        "notFound": "No Point Of Sales found"
+      },
+      "created": "A new Point Of Sale is created with identifier {{ param }}",
+      "updated": "A Point Of Sale is updated with identifier {{ param }}",
+      "deleted": "A Point Of Sale is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Point Of Sale {{ id }}?"
+      },
+      "detail": {
+        "title": "Point Of Sale"
+      },
+      "name": "Name",
+      "subscribed": "Subscribed",
+      "status": "Status",
+      "address": "Address",
+      "pointOfSalePrize": "Point Of Sale Prize",
+      "pointOfSaleEmployee": "Point Of Sale Employee",
+      "bussiness": "Bussiness"
+    }
+  }
+}

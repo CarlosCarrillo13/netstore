@@ -1,0 +1,10 @@
+{
+  "netstoreApp": {
+    "SubType": {
+      "null": "",
+      "MONTHLY": "MONTHLY",
+      "YEARLY": "YEARLY",
+      "TRIAL": "TRIAL"
+    }
+  }
+}

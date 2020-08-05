@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-shipment-heading" jhiTranslate="netstoreApp.shipment.home.createOrEditLabel">Create or edit a Shipment</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.shipment.shipDate" for="field_shipDate">Ship Date</label>
+                    <input type="text" class="form-control" name="shipDate" id="field_shipDate"
+                           formControlName="shipDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.shipment.estimatedArrivalDate" for="field_estimatedArrivalDate">Estimated Arrival Date</label>
+                    <input type="text" class="form-control" name="estimatedArrivalDate" id="field_estimatedArrivalDate"
+                           formControlName="estimatedArrivalDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.shipment.deliveryStatus" for="field_deliveryStatus">Delivery Status</label>
+                    <select class="form-control" name="deliveryStatus" formControlName="deliveryStatus" id="field_deliveryStatus">
+                        <option value="ISSUED">{{ 'netstoreApp.DeliveryStatus.ISSUED' | translate }}</option>
+                        <option value="DELIVERED">{{ 'netstoreApp.DeliveryStatus.DELIVERED' | translate }}</option>
+                        <option value="CANCELLED">{{ 'netstoreApp.DeliveryStatus.CANCELLED' | translate }}</option>
+                        <option value="RETURNED">{{ 'netstoreApp.DeliveryStatus.RETURNED' | translate }}</option>
+                        <option value="IN_PERSON">{{ 'netstoreApp.DeliveryStatus.IN_PERSON' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.shipment.trackingNumber" for="field_trackingNumber">Tracking Number</label>
+                    <input type="text" class="form-control" name="trackingNumber" id="field_trackingNumber"
+                           formControlName="trackingNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.shipment.shippingCompany" for="field_shippingCompany">Shipping Company</label>
+                    <input type="text" class="form-control" name="shippingCompany" id="field_shippingCompany"
+                           formControlName="shippingCompany"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.shipment.shipmentAddress" for="field_shipmentAddress">Shipment Address</label>
+                    <select class="form-control" id="field_shipmentAddress" name="shipmentAddress" formControlName="shipmentAddress">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="locationOption.id === editForm.get('shipmentAddress')!.value?.id ? editForm.get('shipmentAddress')!.value : locationOption" *ngFor="let locationOption of shipmentaddresses; trackBy: trackById">{{ locationOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

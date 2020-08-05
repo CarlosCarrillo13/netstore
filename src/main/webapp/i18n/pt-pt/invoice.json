@@ -1,0 +1,30 @@
+{
+  "netstoreApp": {
+    "invoice": {
+      "home": {
+        "title": "Invoices",
+        "createLabel": "Criar novo(a) Invoice",
+        "createOrEditLabel": "Criar ou editar Invoice",
+        "search": "Procurar por Invoice",
+        "notFound": "Nenhum Invoices encontrado"
+      },
+      "created": "Um novo Invoice foi criado com o identificador {{ param }}",
+      "updated": "Invoice com identificador {{ param }} foi actualizado",
+      "deleted": "Invoice com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Invoice {{ id }}?"
+      },
+      "detail": {
+        "title": "Invoice"
+      },
+      "totalPrize": "Total Prize",
+      "totalTax": "Total Tax",
+      "totalDiscount": "Total Discount",
+      "date": "Date",
+      "recall": "Recall",
+      "invoiceVendor": "Invoice Vendor",
+      "invoiceShipment": "Invoice Shipment",
+      "invoiceItems": "Invoice Items"
+    }
+  }
+}

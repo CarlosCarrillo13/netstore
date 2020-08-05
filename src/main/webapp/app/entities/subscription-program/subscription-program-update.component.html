@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-subscription-program-heading" jhiTranslate="netstoreApp.subscriptionProgram.home.createOrEditLabel">Create or edit a Subscription Program</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.subscriptionProgram.subscriptionType" for="field_subscriptionType">Subscription Type</label>
+                    <select class="form-control" name="subscriptionType" formControlName="subscriptionType" id="field_subscriptionType">
+                        <option value="MONTHLY">{{ 'netstoreApp.SubType.MONTHLY' | translate }}</option>
+                        <option value="YEARLY">{{ 'netstoreApp.SubType.YEARLY' | translate }}</option>
+                        <option value="TRIAL">{{ 'netstoreApp.SubType.TRIAL' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.subscriptionProgram.startDate" for="field_startDate">Start Date</label>
+                    <input type="text" class="form-control" name="startDate" id="field_startDate"
+                           formControlName="startDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.subscriptionProgram.endDate" for="field_endDate">End Date</label>
+                    <input type="text" class="form-control" name="endDate" id="field_endDate"
+                           formControlName="endDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.subscriptionProgram.amount" for="field_amount">Amount</label>
+                    <input type="text" class="form-control" name="amount" id="field_amount"
+                           formControlName="amount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netstoreApp.subscriptionProgram.numberOfPos" for="field_numberOfPos">Number Of Pos</label>
+                    <input type="number" class="form-control" name="numberOfPos" id="field_numberOfPos"
+                           formControlName="numberOfPos"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

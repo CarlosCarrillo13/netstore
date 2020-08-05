@@ -1,0 +1,44 @@
+{
+  "name": "Prize",
+  "fields": [
+    {
+      "fieldName": "symbol",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "item",
+      "otherEntityRelationshipName": "itemPrize",
+      "relationshipName": "item",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pointOfSale",
+      "otherEntityRelationshipName": "pointOfSalePrize",
+      "relationshipName": "pointOfSale",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200730012700",
+  "entityTableName": "prize",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

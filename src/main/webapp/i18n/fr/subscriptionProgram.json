@@ -1,0 +1,28 @@
+{
+  "netstoreApp": {
+    "subscriptionProgram": {
+      "home": {
+        "title": "SubscriptionPrograms",
+        "createLabel": "Créer un nouveau Subscription Program",
+        "createOrEditLabel": "Créer ou éditer un Subscription Program",
+        "search": "Recherche pour Subscription Program",
+        "notFound": "Aucun Subscription Program trouvé"
+      },
+      "created": "Un nouveau Subscription Program a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Subscription Program avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Subscription Program avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Subscription Program {{ id }} ?"
+      },
+      "detail": {
+        "title": "Subscription Program"
+      },
+      "subscriptionType": "Subscription Type",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "amount": "Amount",
+      "numberOfPos": "Number Of Pos",
+      "subscriptionProgram": "Subscription Program"
+    }
+  }
+}

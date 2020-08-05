@@ -1,0 +1,46 @@
+{
+  "name": "SubscriptionProgram",
+  "fields": [
+    {
+      "fieldName": "subscriptionType",
+      "fieldType": "SubType",
+      "fieldValues": "MONTHLY,YEARLY,TRIAL"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numberOfPos",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "bussinessUnit",
+      "otherEntityRelationshipName": "bussiness",
+      "relationshipName": "subscriptionProgram",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200730012500",
+  "entityTableName": "subscription_program",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

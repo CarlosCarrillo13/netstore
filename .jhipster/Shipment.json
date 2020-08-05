@@ -1,0 +1,47 @@
+{
+  "name": "Shipment",
+  "fields": [
+    {
+      "fieldName": "shipDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estimatedArrivalDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deliveryStatus",
+      "fieldType": "DeliveryStatus",
+      "fieldValues": "ISSUED,DELIVERED,CANCELLED,RETURNED,IN_PERSON"
+    },
+    {
+      "fieldName": "trackingNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "shippingCompany",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "shipment",
+      "relationshipName": "shipmentAddress",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20200730012200",
+  "entityTableName": "shipment",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

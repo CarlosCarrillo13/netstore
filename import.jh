@@ -43,7 +43,7 @@ entity PointOfSale {
     status Status
 }
 
-entity Subscription {
+entity SubscriptionProgram {
 	subscriptionType SubType
     startDate String
     endDate String
@@ -100,7 +100,7 @@ entity Employee {
 }
 
 relationship OneToOne {
-  BussinessUnit{bussiness} to Subscription{subscription}
+  BussinessUnit{bussiness} to SubscriptionProgram{subscriptionProgram}
   PointOfSale{address} to Location
   Invoice{invoiceVendor} to Employee
   Invoice{invoiceShipment} to Shipment

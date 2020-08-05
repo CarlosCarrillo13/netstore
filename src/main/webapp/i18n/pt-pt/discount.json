@@ -1,0 +1,28 @@
+{
+  "netstoreApp": {
+    "discount": {
+      "home": {
+        "title": "Discounts",
+        "createLabel": "Criar novo(a) Discount",
+        "createOrEditLabel": "Criar ou editar Discount",
+        "search": "Procurar por Discount",
+        "notFound": "Nenhum Discounts encontrado"
+      },
+      "created": "Um novo Discount foi criado com o identificador {{ param }}",
+      "updated": "Discount com identificador {{ param }} foi actualizado",
+      "deleted": "Discount com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Discount {{ id }}?"
+      },
+      "detail": {
+        "title": "Discount"
+      },
+      "percentage": "Percentage",
+      "concept": "Concept",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "active": "Active",
+      "item": "Item"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "netstoreApp": {
+    "prize": {
+      "home": {
+        "title": "Prizes",
+        "createLabel": "Create a new Prize",
+        "createOrEditLabel": "Create or edit a Prize",
+        "search": "Search for Prize",
+        "notFound": "No Prizes found"
+      },
+      "created": "A new Prize is created with identifier {{ param }}",
+      "updated": "A Prize is updated with identifier {{ param }}",
+      "deleted": "A Prize is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Prize {{ id }}?"
+      },
+      "detail": {
+        "title": "Prize"
+      },
+      "symbol": "Symbol",
+      "country": "Country",
+      "amount": "Amount",
+      "item": "Item",
+      "pointOfSale": "Point Of Sale"
+    }
+  }
+}

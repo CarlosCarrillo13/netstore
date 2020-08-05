@@ -1,0 +1,25 @@
+{
+  "netstoreApp": {
+    "tax": {
+      "home": {
+        "title": "Taxes",
+        "createLabel": "Criar novo(a) Tax",
+        "createOrEditLabel": "Criar ou editar Tax",
+        "search": "Procurar por Tax",
+        "notFound": "Nenhum Taxes encontrado"
+      },
+      "created": "Um novo Tax foi criado com o identificador {{ param }}",
+      "updated": "Tax com identificador {{ param }} foi actualizado",
+      "deleted": "Tax com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Tax {{ id }}?"
+      },
+      "detail": {
+        "title": "Tax"
+      },
+      "percentage": "Percentage",
+      "concept": "Concept",
+      "item": "Item"
+    }
+  }
+}

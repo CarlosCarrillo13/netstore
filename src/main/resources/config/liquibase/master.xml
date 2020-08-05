@@ -14,7 +14,29 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730011900_added_entity_BussinessUnit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012000_added_entity_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012100_added_entity_Invoice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012200_added_entity_Shipment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012300_added_entity_Location.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012400_added_entity_PointOfSale.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012500_added_entity_SubscriptionProgram.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012600_added_entity_Item.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012700_added_entity_Prize.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012800_added_entity_Tax.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012900_added_entity_Discount.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730013000_added_entity_Employee.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200730011900_added_entity_constraints_BussinessUnit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012000_added_entity_constraints_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012100_added_entity_constraints_Invoice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012200_added_entity_constraints_Shipment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012400_added_entity_constraints_PointOfSale.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012600_added_entity_constraints_Item.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012700_added_entity_constraints_Prize.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012800_added_entity_constraints_Tax.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730012900_added_entity_constraints_Discount.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200730013000_added_entity_constraints_Employee.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

@@ -1,0 +1,45 @@
+{
+  "name": "Discount",
+  "fields": [
+    {
+      "fieldName": "percentage",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "concept",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "active",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "item",
+      "otherEntityRelationshipName": "itemDiscount",
+      "relationshipName": "item",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200730012900",
+  "entityTableName": "discount",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

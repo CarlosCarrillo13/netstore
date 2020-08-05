@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="employee">
+            <h2><span jhiTranslate="netstoreApp.employee.detail.title">Employee</span> {{ employee.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="netstoreApp.employee.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{ employee.firstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.employee.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{ employee.lastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.employee.email">Email</span></dt>
+                <dd>
+                    <span>{{ employee.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.employee.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{ employee.phoneNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.employee.hireDate">Hire Date</span></dt>
+                <dd>
+                    <span>{{ employee.hireDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.employee.salary">Salary</span></dt>
+                <dd>
+                    <span>{{ employee.salary }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.employee.commissionPct">Commission Pct</span></dt>
+                <dd>
+                    <span>{{ employee.commissionPct }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.employee.pointOfSale">Point Of Sale</span></dt>
+                <dd>
+                    <div *ngIf="employee.pointOfSale">
+                        <a [routerLink]="['/point-of-sale', employee.pointOfSale?.id, 'view']">{{ employee.pointOfSale?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.employee.employee">Employee</span></dt>
+                <dd>
+                    <div *ngIf="employee.employee">
+                        <a [routerLink]="['/employee', employee.employee?.id, 'view']">{{ employee.employee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/employee', employee.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

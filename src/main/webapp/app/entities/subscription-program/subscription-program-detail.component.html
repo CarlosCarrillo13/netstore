@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="subscriptionProgram">
+            <h2><span jhiTranslate="netstoreApp.subscriptionProgram.detail.title">Subscription Program</span> {{ subscriptionProgram.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="netstoreApp.subscriptionProgram.subscriptionType">Subscription Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'netstoreApp.SubType.' + subscriptionProgram.subscriptionType }}">{{ subscriptionProgram.subscriptionType }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.subscriptionProgram.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{ subscriptionProgram.startDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.subscriptionProgram.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{ subscriptionProgram.endDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.subscriptionProgram.amount">Amount</span></dt>
+                <dd>
+                    <span>{{ subscriptionProgram.amount }}</span>
+                </dd>
+                <dt><span jhiTranslate="netstoreApp.subscriptionProgram.numberOfPos">Number Of Pos</span></dt>
+                <dd>
+                    <span>{{ subscriptionProgram.numberOfPos }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/subscription-program', subscriptionProgram.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+{
+  "name": "PointOfSale",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subscribed",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE,ON_HOLD,INACTIVE"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "pointOfSale",
+      "relationshipName": "address",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "prize",
+      "otherEntityRelationshipName": "pointOfSale",
+      "relationshipName": "pointOfSalePrize"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "pointOfSale",
+      "relationshipName": "pointOfSaleEmployee"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "bussinessUnit",
+      "otherEntityRelationshipName": "bussinessPOS",
+      "relationshipName": "bussiness",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200730012400",
+  "entityTableName": "point_of_sale",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

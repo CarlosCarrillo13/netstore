@@ -1,0 +1,54 @@
+{
+  "name": "BussinessUnit",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nit",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "brand",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "active",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "subscriptionProgram",
+      "otherEntityRelationshipName": "subscriptionProgram",
+      "relationshipName": "bussiness",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "category",
+      "otherEntityRelationshipName": "bussiness",
+      "relationshipName": "bussinessCategories"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "pointOfSale",
+      "otherEntityRelationshipName": "bussiness",
+      "relationshipName": "bussinessPOS"
+    }
+  ],
+  "changelogDate": "20200730011900",
+  "entityTableName": "bussiness_unit",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
