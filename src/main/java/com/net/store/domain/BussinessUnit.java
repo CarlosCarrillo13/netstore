@@ -41,7 +41,7 @@ public class BussinessUnit implements Serializable {
     private SubscriptionProgram bussiness;
 
     @OneToMany
-    private Set<User> users = new HashSet<>();
+    private Set<User> users;
 
     @OneToMany(mappedBy = "bussiness")
     private Set<Category> bussinessCategories = new HashSet<>();
