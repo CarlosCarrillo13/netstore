@@ -61,4 +61,12 @@
         </loadData>
     </changeSet>
 
+    <changeSet id="20200730011900-2-data" author="carloscarrillo">
+        <addColumn tableName="point_of_sale">
+            <column name="jhi_user" type="bigint">
+                <constraints foreignKeyName="fk_business_unit_user" references="jhi_user(id)"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>

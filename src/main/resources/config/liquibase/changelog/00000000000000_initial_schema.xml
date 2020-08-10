@@ -156,4 +156,15 @@
             <column name="local_date" type="date"/>
         </createTable>
     </changeSet>
+
+    <changeSet id="00000000000003" author="carloscarrillo">
+        <addColumn tableName="jhi_user">
+            <column name="bussiness_unit" type="bigint">
+                <constraints foreignKeyName="fk_user_business_unit" references="bussiness_unit(id)"/>
+            </column>
+            <column name="point_of_sale" type="bigint">
+                <constraints foreignKeyName="fk_user_point_of_sale" references="point_of_sale(id)"/>
+            </column>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

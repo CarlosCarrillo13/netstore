@@ -83,8 +83,11 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(name = "reset_date")
     private Instant resetDate = null;
 
-    @Column(name = "business_unit")
+    @ManyToOne
     private BussinessUnit businessUnit;
+
+    @ManyToOne
+    private PointOfSale pointOfSale;
 
     @JsonIgnore
     @ManyToMany
@@ -95,6 +98,13 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @BatchSize(size = 20)
     private Set<Authority> authorities = new HashSet<>();
 
+    public PointOfSale getPointOfSale() {
+        return pointOfSale;
+    }
+
+    public void setPointOfSale(PointOfSale pointOfSale) {
+        this.pointOfSale = pointOfSale;
+    }
 
     public BussinessUnit getBusinessUnit() {
         return businessUnit;

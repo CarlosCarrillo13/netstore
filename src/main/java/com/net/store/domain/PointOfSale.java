@@ -7,6 +7,7 @@ import javax.persistence.*;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.net.store.domain.enumeration.Status;
@@ -50,7 +51,19 @@ public class PointOfSale implements Serializable {
     @JsonIgnoreProperties(value = "bussinessPOS", allowSetters = true)
     private BussinessUnit bussiness;
 
+    @OneToMany
+    @Column(name = "user")
+    private Set<User> users = new HashSet<>();
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers() {
+        this.users = users;
+    }
+
     public Long getId() {
         return id;
     }

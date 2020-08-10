@@ -40,8 +40,8 @@ public class BussinessUnit implements Serializable {
     @JoinColumn(unique = true)
     private SubscriptionProgram bussiness;
 
-    @ManyToOne
-    private List<User> users;
+    @OneToMany
+    private Set<User> users = new HashSet<>();
 
     @OneToMany(mappedBy = "bussiness")
     private Set<Category> bussinessCategories = new HashSet<>();
@@ -50,6 +50,16 @@ public class BussinessUnit implements Serializable {
     private Set<PointOfSale> bussinessPOS = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers() {
+        this.users = users;
+    }
+
     public Long getId() {
         return id;
     }
