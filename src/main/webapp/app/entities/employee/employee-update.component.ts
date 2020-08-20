@@ -11,6 +11,8 @@ import { IEmployee, Employee } from 'app/shared/model/employee.model';
 import { EmployeeService } from './employee.service';
 import { IPointOfSale } from 'app/shared/model/point-of-sale.model';
 import { PointOfSaleService } from 'app/entities/point-of-sale/point-of-sale.service';
+import { BussinessUnit, IBussinessUnit } from 'app/shared/model/bussiness-unit.model';
+import { BussinessUnitService } from 'app/entities/bussiness-unit/bussiness-unit.service';
 
 type SelectableEntity = IPointOfSale | IEmployee;
 
@@ -22,6 +24,7 @@ export class EmployeeUpdateComponent implements OnInit {
   isSaving = false;
   pointofsales: IPointOfSale[] = [];
   employees: IEmployee[] = [];
+  businessUnits: BussinessUnit[] = [];
 
   editForm = this.fb.group({
     id: [],
@@ -32,6 +35,7 @@ export class EmployeeUpdateComponent implements OnInit {
     hireDate: [],
     salary: [],
     commissionPct: [],
+    bussinessUnit: [],
     pointOfSale: [],
     employee: [],
   });
@@ -39,6 +43,7 @@ export class EmployeeUpdateComponent implements OnInit {
   constructor(
     protected employeeService: EmployeeService,
     protected pointOfSaleService: PointOfSaleService,
+    protected bussinessUnitService: BussinessUnitService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -51,6 +56,8 @@ export class EmployeeUpdateComponent implements OnInit {
       }
 
       this.updateForm(employee);
+
+      this.bussinessUnitService.query().subscribe((res: HttpResponse<IBussinessUnit[]>) => (this.businessUnits = res.body || []));
 
       this.pointOfSaleService.query().subscribe((res: HttpResponse<IPointOfSale[]>) => (this.pointofsales = res.body || []));
 

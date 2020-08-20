@@ -1,6 +1,7 @@
 {
   "netstoreApp": {
     "employee": {
+      "bussinessUnit": "Unidad de negocio",
       "home": {
         "title": "Employees",
         "createLabel": "Crear nuevo Employee",

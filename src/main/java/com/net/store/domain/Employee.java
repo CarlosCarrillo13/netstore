@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.CollectionId;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 import java.time.Instant;
@@ -57,7 +58,18 @@ public class Employee implements Serializable {
     @JsonIgnoreProperties(value = "employeeManagers", allowSetters = true)
     private Employee employee;
 
+    @Column(name = "user")
+    private User user;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Long getId() {
         return id;
     }
